@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Said Yes! 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .rose-container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: popIn 0.6s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .rose-header {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rose-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 1s ease-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .rose-header p {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        .rose-content {
+            padding: 50px 40px;
+        }
+
+        .rose-garden {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .rose {
+            font-size: 4rem;
+            text-align: center;
+            animation: roseFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .rose:nth-child(1) { animation-delay: 0s; }
+        .rose:nth-child(2) { animation-delay: 0.2s; }
+        .rose:nth-child(3) { animation-delay: 0.4s; }
+        .rose:nth-child(4) { animation-delay: 0.6s; }
+        .rose:nth-child(5) { animation-delay: 0.8s; }
+        .rose:nth-child(6) { animation-delay: 1s; }
+        .rose:nth-child(7) { animation-delay: 1.2s; }
+        .rose:nth-child(8) { animation-delay: 1.4s; }
+
+        .rose:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes roseFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .love-message {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #FF1493;
+            text-align: center;
+            animation: slideIn 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .love-message h2 {
+            color: #FF1493;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .love-message p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .reason-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-top: 4px solid #FF1493;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.8s ease-out both;
+        }
+
+        .reason-card:nth-child(1) { animation-delay: 0.4s; }
+        .reason-card:nth-child(2) { animation-delay: 0.5s; }
+        .reason-card:nth-child(3) { animation-delay: 0.6s; }
+        .reason-card:nth-child(4) { animation-delay: 0.7s; }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.2);
+        }
+
+        .reason-card h3 {
+            color: #FF1493;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .reason-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .reasons-section {
+            margin: 40px 0;
+        }
+
+        .reasons-section h2 {
+            text-align: center;
+            color: #FF1493;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1.5rem;
+            animation: confettiFall 3s ease-in forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF1493;
+            border: 2px solid #FF1493;
+        }
+
+        .btn-secondary:hover {
+            background: #FF1493;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .forever-message {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            animation: slideIn 1s ease-out 1s both;
+        }
+
+        .forever-message h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .forever-message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-button a {
+            color: #FF1493;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button a:hover {
+            color: #FF69B4;
+            transform: scale(1.1);
+            display: inline-block;
+        }
+
+        .missing-section {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            border: 2px solid #FF1493;
+        }
+
+        .missing-section h2 {
+            color: #FF1493;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .missing-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-missing-yes {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-missing-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .btn-missing-no {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border: 2px solid #FF1493;
+            border-radius: 50px;
+            background: white;
+            color: #FF1493;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .btn-missing-no:hover {
+            transform: scale(0.7) translateX(30px) translateY(-15px);
+        }
+
+        @media (max-width: 768px) {
+            .rose-header {
+                padding: 40px 20px;
+            }
+
+            .rose-header h1 {
+                font-size: 2rem;
+            }
+
+            .rose-content {
+                padding: 30px 20px;
+            }
+
+            .rose-garden {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rose-container">
+        <div class="rose-header">
+            <h1>💕 YES! I LOVE YOU! 💕</h1>
+            <p>You just made me the happiest person alive!</p>
+        </div>
+
+        <div class="rose-content">
+            <div class="rose-garden">
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+            </div>
+
+            <div class="love-message">
+                <h2>My Dearest Love,</h2>
+                <p>Your "Yes" just meant everything to me! 💕</p>
+                <p>From this moment on, I promise to love you with all my heart, cherish every moment we share, and make you smile every single day.</p>
+                <p>You are my miracle, my strength, my reason to smile.</p>
+            </div>
+
+            <div class="reasons-section">
+                <h2>Reasons Why You're My Everything 💖</h2>
+                
+                <div class="reason-card">
+                    <h3>💎 Your Beautiful Soul</h3>
+                    <p>Your kindness, compassion, and gentleness light up the world. You make everyone around you feel valued and loved.</p>
+                </div>
+
+                <div class="reason-card">
+                    <h3>😊 Your Amazing Smile</h3>
+                    <p>When you smile, my heart stops and the whole world becomes beautiful. Your happiness is my greatest joy.</p>
+                </div>
+
+                <div class="reason-card">
+                    <h3>❤️ Your Loving Heart</h3>
+                    <p>The way you love so purely and deeply inspires me every day. You teach me what true love really means.</p>
+                </div>
+
+                <div class="reason-card">
+                    <h3>✨ Your Everything</h3>
+                    <p>Every little thing about you—from your laugh to your dreams, from your passion to your courage—makes me fall in love with you all over again.</p>
+                </div>
+            </div>
+
+            <div class="forever-message">
+                <h2>Forever Starts Today 💑</h2>
+                <p>I promise to stand by your side through every joy and challenge. You're not just my love, you're my best friend, my soulmate, and my forever. I love you more than words could ever express. 🌹💕</p>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="createConfetti(); setTimeout(() => window.location.href='index.html', 2000);">🎉 Back to Start</button>
+                <button class="btn-secondary" onclick="createConfetti()">✨ Celebrate More</button>
+            </div>
+
+            <div class="missing-section">
+                <h2>Are You Missing Me? 💭</h2>
+                <div class="missing-buttons">
+                    <button class="btn-missing-yes" onclick="openMissingPage()">Bahut Jyada 💔</button>
+                    <button class="btn-missing-no" id="thodaBtn" onmouseover="moveThodaButton()">Thoda Thoda 😊</button>
+                </div>
+            </div>
+
+            <div class="back-button">
+                <a href="index.html">← Back to Valentine's Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create confetti animation
+        function createConfetti() {
+            const confettiPieces = ['🌹', '💕', '💖', '✨', '⭐', '💑'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.textContent = confettiPieces[Math.floor(Math.random() * confettiPieces.length)];
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+        }
+
+        // Auto-create confetti on page load
+        window.addEventListener('load', function() {
+            createConfetti();
+        });
+
+        // Create more confetti on rose click
+        document.querySelectorAll('.rose').forEach(rose => {
+            rose.addEventListener('click', function() {
+                createConfetti();
+            });
+        });
+
+        // Move Thoda button away
+        function moveThodaButton() {
+            const thodaBtn = document.getElementById('thodaBtn');
+            const randomX = (Math.random() - 0.5) * 250;
+            const randomY = (Math.random() - 0.5) * 250;
+            const randomScale = 0.4 + Math.random() * 0.6;
+            
+            thodaBtn.style.transform = `translate(${randomX}px, ${randomY}px) scale(${randomScale})`;
+        }
+
+        // Open missing page
+        function openMissingPage() {
+            window.location.href = 'missing.html';
+        }
+    </script>
+</body>
+</html>

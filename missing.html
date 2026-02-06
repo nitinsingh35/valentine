@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miss You So Much 💔</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .missing-container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: slideInMissing 0.8s ease-out;
+        }
+
+        @keyframes slideInMissing {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .missing-header {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .missing-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        .missing-header p {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .missing-content {
+            padding: 50px 40px;
+        }
+
+        .sad-emojis {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            font-size: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .emoji-falling {
+            animation: fall 2s infinite ease-in;
+        }
+
+        .emoji-falling:nth-child(1) { animation-delay: 0s; }
+        .emoji-falling:nth-child(2) { animation-delay: 0.3s; }
+        .emoji-falling:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .miss-message {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #FF6B9D;
+            text-align: center;
+        }
+
+        .miss-message h2 {
+            color: #FF6B9D;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .miss-message p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .missing-details {
+            margin: 40px 0;
+        }
+
+        .missing-detail-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-top: 4px solid #FF6B9D;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.1);
+            animation: slideLeftIn 0.8s ease-out both;
+        }
+
+        .missing-detail-card:nth-child(1) { animation-delay: 0.3s; }
+        .missing-detail-card:nth-child(2) { animation-delay: 0.4s; }
+        .missing-detail-card:nth-child(3) { animation-delay: 0.5s; }
+        .missing-detail-card:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes slideLeftIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .missing-detail-card h3 {
+            color: #FF6B9D;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .missing-detail-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .count-down {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            animation: slideInMissing 1s ease-out 0.7s both;
+        }
+
+        .count-down h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .count-down p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .missing-quote {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid #FF6B9D;
+            font-style: italic;
+            animation: slideInMissing 1s ease-out 0.9s both;
+        }
+
+        .missing-quote p {
+            color: #FF6B9D;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF6B9D;
+            border: 2px solid #FF6B9D;
+        }
+
+        .btn-secondary:hover {
+            background: #FF6B9D;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .tear-animation {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            animation: tearFall 3s ease-in forwards;
+        }
+
+        @keyframes tearFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-100px) translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(200px) translateX(30px);
+            }
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-button a {
+            color: #FF6B9D;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button a:hover {
+            color: #C06C84;
+            transform: scale(1.1);
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .missing-header {
+                padding: 40px 20px;
+            }
+
+            .missing-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .missing-content {
+                padding: 30px 20px;
+            }
+
+            .sad-emojis {
+                font-size: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="missing-container">
+        <div class="missing-header">
+            <h1>💔 I Miss You So Much 💔</h1>
+            <p>Every moment without you feels like forever...</p>
+        </div>
+
+        <div class="missing-content">
+            <div class="sad-emojis">
+                <div class="emoji-falling">😢</div>
+                <div class="emoji-falling">💭</div>
+                <div class="emoji-falling">💔</div>
+            </div>
+
+            <div class="miss-message">
+                <h2>You Know That Feeling?</h2>
+                <p>When someone means everything to you and they're not there...</p>
+                <p>That's exactly what I feel when you're away from me.</p>
+                <p>Missing you isn't just about the physical distance, it's about how my heart aches for your presence.</p>
+            </div>
+
+            <div class="missing-details">
+                <div class="missing-detail-card">
+                    <h3>😢 I Miss Your Smile</h3>
+                    <p>That beautiful smile that brightens even my darkest days. The way it lights up your face and makes everything feel okay. I miss it so much when you're not around.</p>
+                </div>
+
+                <div class="missing-detail-card">
+                    <h3>🤗 I Miss Your Hugs</h3>
+                    <p>Those warm, safe hugs where I feel like nothing else matters. Your embrace is my sanctuary, my comfort, my home. I miss holding you close.</p>
+                </div>
+
+                <div class="missing-detail-card">
+                    <h3>👂 I Miss Your Voice</h3>
+                    <p>The way you laugh, the sound of your voice, even when you're just saying my name. Every word from you means the world to me. I miss hearing you.</p>
+                </div>
+
+                <div class="missing-detail-card">
+                    <h3>❤️ I Miss Being With You</h3>
+                    <p>Doing nothing with you is better than doing everything with anyone else. Your company, your presence, your love - I miss it all.</p>
+                </div>
+            </div>
+
+            <div class="count-down">
+                <h2>⏳ Counting Days Until I See You Again</h2>
+                <p>Every second, every minute, every hour brings me closer to holding you again.</p>
+                <p>I'm living for that moment when I can look into your eyes and tell you how much I missed you.</p>
+            </div>
+
+            <div class="missing-quote">
+                <p>"Missing you is like missing a part of my soul. You're not just someone I love, you're someone I can't live without." 💕</p>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="createTearsAndGo();">💌 Send You Love</button>
+                <button class="btn-secondary" onclick="createTears();">😢 Let It Out</button>
+            </div>
+
+            <div class="back-button">
+                <a href="rose.html">← Back to Love Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create tear animation
+        function createTears() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const tear = document.createElement('div');
+                    tear.className = 'tear-animation';
+                    tear.textContent = '💧';
+                    tear.style.left = Math.random() * window.innerWidth + 'px';
+                    tear.style.top = '-50px';
+                    document.body.appendChild(tear);
+                    
+                    setTimeout(() => tear.remove(), 3000);
+                }, i * 50);
+            }
+        }
+
+        function createTearsAndGo() {
+            alert('💕 Jaldi Milne AA jao Aapke bachche se wait nahi ho pa raha hai..... \n\nCan\'t wait to see you soon! 🥺❤️');
+            createTears();
+        }
+
+        // Auto-create tears on page load
+        window.addEventListener('load', function() {
+            createTears();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 3s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-30px) translateX(10px);
+                opacity: 0.8;
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content {
+            padding: 60px 40px;
+        }
+
+        .message-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #FF1493;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .message-box h2 {
+            color: #FF1493;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .message-box p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #FF1493;
+            animation: fadeIn 1s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.4s; }
+        .feature-card:nth-child(2) { animation-delay: 0.5s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #FF1493;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF1493;
+            border: 2px solid #FF1493;
+        }
+
+        .btn-secondary:hover {
+            background: #FF1493;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            margin: 50px 0;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            color: #FF1493;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            aspect-ratio: 1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        .countdown {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .countdown h2 {
+            color: #FF1493;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .countdown-timer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .time-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.1);
+        }
+
+        .time-number {
+            font-size: 1.8rem;
+            color: #FF1493;
+            font-weight: bold;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #f5f5f5;
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        .heart-animation {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            animation: heartFloat 3s ease-out forwards;
+        }
+
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) translateX(50px) scale(0.5);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        .close {
+            color: #999;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #FF1493;
+        }
+
+        .modal h2 {
+            color: #FF1493;
+            margin-bottom: 20px;
+        }
+
+        .modal textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #FF1493;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .question-section {
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            border: 2px solid #FF1493;
+        }
+
+        .question-section h2 {
+            color: #FF1493;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .yes-no-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-yes {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .btn-no {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border: 2px solid #FF1493;
+            border-radius: 50px;
+            background: white;
+            color: #FF1493;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .btn-no:hover {
+            transform: scale(0.8) translateX(20px) translateY(-10px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="floating-hearts" id="floatingHearts"></div>
+            <h1>💕 Happy Valentine's Day 💕</h1>
+            <p class="subtitle">To My Love</p>
+        </header>
+
+        <div class="main-content">
+            <div class="message-section">
+                <div class="message-box">
+                    <h2>You Make My Heart Skip a Beat</h2>
+                    <p>Every moment with you is a beautiful memory in the making. Your smile brightens my darkest days, and your love fills my heart with endless joy. Thank you for being the most wonderful person in my life. I love you more than words could ever express. ❤️</p>
+                </div>
+            </div>
+
+            <div class="countdown" id="countdownSection">
+                <h2>Forever With You</h2>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="time-box">
+                        <div class="time-number" id="days">0</div>
+                        <div class="time-label">Days</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="hours">0</div>
+                        <div class="time-label">Hours</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="minutes">0</div>
+                        <div class="time-label">Minutes</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="seconds">0</div>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">💍</div>
+                    <h3>You're Everything</h3>
+                    <p>You're my greatest blessing and my happiest thought. My love for you grows stronger every single day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌹</div>
+                    <h3>Forever & Always</h3>
+                    <p>I promise to love, cherish, and support you through every moment of our beautiful journey together.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>My Soulmate</h3>
+                    <p>In your eyes I found my home, in your heart I found my love, in your soul I found my soulmate.</p>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <h2>💝 Special Memories 💝</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="alert('Add your favorite memories and photos here! 📸')">📸</div>
+                    <div class="gallery-item" onclick="alert('Your beautiful moments together ✨')">💑</div>
+                    <div class="gallery-item" onclick="alert('Adventures & laughter 🎉')">🎉</div>
+                    <div class="gallery-item" onclick="alert('Dreams & plans for the future 🌟')">🌟</div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-primary" onclick="showLoveMessage()">💌 Send Love Message</button>
+                <button class="btn-secondary" onclick="createHearts()">✨ Make It Special</button>
+            </div>
+
+            <div class="question-section">
+                <h2>Will You Be My Valentine? 💕</h2>
+                <div class="yes-no-buttons">
+                    <button class="btn-yes" onclick="openRosePage()">💕 YES</button>
+                    <button class="btn-no" id="noBtn" onmouseover="moveNoButton()">❌ NO</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made with 💕 for the one I love</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Happy Valentine's Day! 🎉</p>
+        </footer>
+    </div>
+
+    <!-- Love Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>💌 Express Your Love</h2>
+            <textarea id="loveMessage" placeholder="Write your heartfelt message here..."></textarea>
+            <div class="buttons" style="margin-top: 20px;">
+                <button class="btn-primary" onclick="saveLoveMessage()" style="width: 100%;">💕 Save My Message</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Floating hearts in header
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            for (let i = 0; i < 8; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            
+            // Set target to next Valentine's Day
+            let valentine = new Date(currentYear, 1, 14); // February 14
+            
+            if (now > valentine) {
+                valentine = new Date(currentYear + 1, 1, 14);
+            }
+            
+            const difference = valentine - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / 1000 / 60) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Create floating hearts on click
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-animation';
+                    heart.textContent = '❤️';
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = window.innerHeight + 'px';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 50);
+            }
+        }
+
+        // Love message modal
+        function showLoveMessage() {
+            document.getElementById('messageModal').style.display = 'block';
+            createHearts();
+        }
+
+        function closeModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+
+        function saveLoveMessage() {
+            const message = document.getElementById('loveMessage').value;
+            if (message.trim() === '') {
+                alert('Please write a message first! 💕');
+                return;
+            }
+            alert('💕 Your love message has been saved!\n\n"' + message.substring(0, 50) + '..."\n\nI love you so much! ❤️');
+            closeLoveMessageModal();
+            createHearts();
+        }
+
+        function closeLoveMessageModal() {
+            document.getElementById('messageModal').style.display = 'none';
+            document.getElementById('loveMessage').value = '';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('messageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Move No button away
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            const randomX = (Math.random() - 0.5) * 200;
+            const randomY = (Math.random() - 0.5) * 200;
+            const randomScale = 0.5 + Math.random() * 0.5;
+            
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px) scale(${randomScale})`;
+        }
+
+        // Open rose page
+        function openRosePage() {
+            window.location.href = 'rose.html';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingHearts();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
